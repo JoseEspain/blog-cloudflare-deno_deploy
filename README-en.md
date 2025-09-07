@@ -169,11 +169,11 @@ English article content here...
 #### Interactive Components sample
 You can directly use React/Preact components in MDX articles:
 
-[Calculates Earth Pressure on Jacking Pipe with Web preview and Docx export](blob/main/src/content/blog/pipe-pressure-en.mdx)
+[Calculates Earth Pressure on Jacking Pipe with Web preview and Docx export](src/content/blog/pipe-pressure-en.mdx)
 
-[AI Chat](blob/main/src/content/blog/ai-chat-en.mdx)
+[AI Chat](src/content/blog/ai-chat-en.mdx)
 
-[KaTeX Renderer & convert](blob/main/src/content/blog/mathml-en.mdx)
+[KaTeX Renderer & convert](src/content/blog/mathml-en.mdx)
 
 
 ### Deployment

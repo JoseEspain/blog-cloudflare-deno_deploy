@@ -207,11 +207,11 @@ English article content here...
 
 在 MDX 文章中可以直接使用 React/Preact 组件：
 
-[顶管管顶竖向土压力计算器](blob/main/src/content/blog/pipe-pressure.mdx)
+[顶管管顶竖向土压力计算器](src/content/blog/pipe-pressure.mdx)
 
-[AI 聊天](blob/main/src/content/blog/ai-chat.mdx)
+[AI 聊天](src/content/blog/ai-chat.mdx)
 
-[KaTeX 渲染及转换工具](blob/main/src/content/blog/mathml.mdx)
+[KaTeX 渲染及转换工具](src/content/blog/mathml.mdx)
 
 ### 📜 主要 NPM 脚本
 
