@@ -1,0 +1,28 @@
+---
+title: 'Using MDX'
+published_at: '2025-08-25'
+blurb: 'This is my first post using MDX in Astro.'
+tags: ['astro', 'mdx', 'test']
+---
+import KatexRenderer from '../../components/KatexRenderer.tsx';
+
+## MDX Test
+
+- This is a regular Markdown paragraph.
+
+Here is a simple JSX component embedded directly in the content:
+
+<div style={{padding: '20px', border: '1px solid #ddd', borderRadius: '8px'}}>
+  <p>This is a JSX element styled with an inline style object.</p>
+  <p>The current date is: {new Date().toLocaleDateString()}</p>
+</div>
+
+MDX makes it easy to mix interactive components into your content.
+
+---
+
+## KaTeX Renderer
+
+Here is an example of an interactive component. You can choose a preset formula or enter your own, and it will be rendered for you in real time.
+
+<KatexRenderer lang="en" client:load />

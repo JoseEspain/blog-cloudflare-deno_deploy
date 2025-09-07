@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --allow-read --watch api/deno.ts"
+  },
+  "fmt": {
+    "options": {
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "singleQuote": true
+    }
+  },
+  "imports": {
+    "hono": "https://deno.land/x/hono@v4.3.11/mod.ts",
+    "hono/": "https://deno.land/x/hono@v4.3.11/",
+    "hono/cors": "https://deno.land/x/hono@v4.3.11/middleware/cors/index.ts",
+    "openai": "https://deno.land/x/openai@v4.52.3/mod.ts"
+  }
+}

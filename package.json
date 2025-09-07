@@ -1,0 +1,72 @@
+{
+  "name": "blog-astro-hono",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "npm@11.5.2",
+  "description": "The Next Syntax for Civil Engineering - A modern bilingual technical blog featuring gleanings and glimmers from engineering, programming, and AI",
+  "keywords": [
+    "astro",
+    "blog",
+    "hono",
+    "preact",
+    "typescript",
+    "tailwindcss",
+    "i18n",
+    "engineering",
+    "calculator",
+    "ai-chat",
+    "cloudflare",
+    "deno-deploy"
+  ],
+  "author": "Fan YiXiong",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/blog-astro-hono.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/blog-astro-hono/issues"
+  },
+  "homepage": "https://blog-fyx.pages.dev",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:astro": "astro dev",
+    "dev:api": "deno task start",
+    "build": "astro build && npm run copy-api && npm run copy-deno-config",
+    "copy-api": "node -e \"require('fs').cpSync('api', 'dist/api', {recursive: true});\"",
+    "copy-deno-config": "node -e \"require('fs').copyFileSync('deno.jsonc', 'dist/deno.jsonc');\"",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.4",
+    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/preact": "^4.1.0",
+    "@astrojs/sitemap": "^3.5.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@preact/signals": "^2.2.1",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^24.3.0",
+    "astro": "^5.13.2",
+    "docx": "^9.5.1",
+    "hono": "^4.4.13",
+    "katex": "^0.16.22",
+    "openai": "^5.12.2",
+    "preact": "^10.22.1",
+    "rehype-katex": "^7.0.1",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-stringify": "^11.0.0",
+    "strip-markdown": "^6.0.0",
+    "tailwindcss": "^3.4.4",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.31.0"
+  }
+}

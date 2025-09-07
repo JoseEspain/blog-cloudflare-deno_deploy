@@ -1,0 +1,28 @@
+---
+title: '使用MDX'
+published_at: '2025-08-25'
+blurb: '这是我第一篇在 Astro 中使用 MDX 的文章。'
+tags: ['astro', 'mdx', '测试']
+---
+import KatexRenderer from '../../components/KatexRenderer.tsx';
+
+## MDX 测试
+
+- 这是一个普通的 Markdown 段落。
+
+下面是一个直接嵌入在内容中的简单 JSX 组件：
+
+<div style={{padding: '20px', border: '1px solid #ddd', borderRadius: '8px'}}>
+  <p>这是一个使用内联样式对象设置样式的 JSX 元素。</p>
+  <p>当前日期是: {new Date().toLocaleDateString()}</p>
+</div>
+
+MDX 可以让你轻松地将交互式组件混合到你的内容中。
+
+---
+
+## KaTeX 渲染工具
+
+下面是一个交互式组件的例子。你可以选择预设的公式，或者自己输入一个，它会为你实时渲染出来。
+
+<KatexRenderer client:load />

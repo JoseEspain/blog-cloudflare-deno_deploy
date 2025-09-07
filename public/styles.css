@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.about-avatar {
+  float: left;
+  margin-right: 4rem; /* 控制图片右侧与文字的间距 */
+  margin-bottom: 1rem;  /* 控制图片下方与文字的间距 */
+}

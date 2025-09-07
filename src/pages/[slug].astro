@@ -1,0 +1,73 @@
+---
+/**
+ * @file src/pages/[slug].astro
+ * @description 动态路由页面，用于渲染单个内容页面（如博客文章或AI聊天应用）。
+ * 它负责根据URL的slug获取对应内容，并将其传递给 `Layout` 组件进行最终渲染。
+ */
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+// 在构建时运行，为每个博客条目生成静态路径。
+// 通过 `props` 直接传递整个 `entry` 对象以提高效率，避免在页面中二次查询。
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  // 只处理中文文章（不以 -en 结尾的文章）
+  const chineseEntries = blogEntries.filter(entry => !entry.slug.endsWith('-en'));
+  
+  return chineseEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// 从 getStaticPaths 的 props 中接收完整的文章数据 `entry`
+const { entry } = Astro.props;
+
+// 渲染 Markdown/MDX 内容为一个 <Content /> 组件，供模板使用
+const { Content } = await entry.render();
+
+
+---
+<Layout 
+  title={entry.data.title} 
+  description={entry.data.blurb}
+  layoutMode={entry.data.layoutMode} /* 将当前页面的布局模式指令传递给父布局 */
+>
+    {/* 
+      根据布局模式，准备不同的“内容”填充到 Layout 的插槽中。
+      - 'app' 模式: 直接渲染内容组件，适用于AI聊天等应用。
+      - 默认(document)模式: 渲染文章结构（标题+正文），适用于标准博客文章。
+    */}
+    {entry.data.layoutMode === 'app' ? (
+    <Content />
+  ) : (
+    <article>
+      <h1 class="text-3xl sm:text-4xl font-bold text-center mb-4">{entry.data.title}</h1>
+      <div class="text-gray-600 dark:text-gray-400 mb-8">
+        <Content />
+      </div>
+    </article>
+  )}
+</Layout>
+
+{/* 为SEO添加JSON-LD结构化数据，帮助搜索引擎更好地理解文章内容 */}
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": entry.data.title,
+  "description": entry.data.blurb,
+  "image": new URL(entry.data.image || '/images/common/main.jpg', Astro.site).href,  
+  "author": {
+    "@type": "Person",
+    "name": "范毅雄" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "博客名称",
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/favicon.ico', Astro.site).href 
+    }
+  },
+  "datePublished": entry.data.published_at.toISOString()
+})} />

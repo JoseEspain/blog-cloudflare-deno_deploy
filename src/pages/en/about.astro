@@ -1,0 +1,22 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const entry = await getEntry('blog', 'about-en');
+
+if (entry === undefined) {
+  return new Response("About page not found", { status: 404 });
+}
+
+const { Content } = await entry.render();
+---
+<Layout 
+  title={`About - ${entry.data.title}`} 
+  description={entry.data.blurb}
+  layoutMode='document'
+>
+  <article>
+    <h1 class="text-4xl font-bold">{entry.data.title}</h1>
+    <Content />
+  </article>
+</Layout>

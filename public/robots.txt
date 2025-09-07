@@ -1,0 +1,6 @@
+# Allow all crawlers to access all content
+User-agent: *
+Allow: /
+
+# Point to the sitemap
+Sitemap: https://blog-fyx.pages.dev/sitemap-index.xml

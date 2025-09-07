@@ -1,0 +1,26 @@
+# Dependencies
+/node_modules
+
+# Build output
+/dist
+
+# Astro cache and types
+/.astro
+
+# Environment Variables
+# Do not commit secrets and API keys to Git!
+.env
+.env.*
+!.env.example
+
+# Log files
+npm-debug.log*
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/

@@ -1,0 +1,65 @@
+---
+/**
+ * @file src/pages/en/[slug].astro
+ * @description 英文版动态路由页面，用于渲染单个内容页面（如博客文章或AI聊天应用）。
+ */
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// 在构建时运行，为每个博客条目生成静态路径。
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  // 只处理英文文章（以 -en 结尾的文章）
+  const englishEntries = blogEntries.filter(entry => entry.slug.endsWith('-en'));
+  
+  return englishEntries.map(entry => ({
+    params: { slug: entry.slug.replace('-en', '') }, // URL 中去掉 -en 后缀
+    props: { entry },
+  }));
+}
+
+// 从 getStaticPaths 的 props 中接收完整的文章数据 `entry`
+const { entry } = Astro.props;
+
+// 渲染 Markdown/MDX 内容为一个 <Content /> 组件，供模板使用
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={entry.data.title} 
+  description={entry.data.blurb}
+  layoutMode={entry.data.layoutMode}
+>
+    {entry.data.layoutMode === 'app' ? (
+    <Content />
+  ) : (
+    <article>
+      <h1 class="text-3xl sm:text-4xl font-bold text-center mb-4">{entry.data.title}</h1>
+      <div class="text-gray-600 dark:text-gray-400 mb-8">
+        <Content />
+      </div>
+    </article>
+  )}
+</Layout>
+
+{/* 为SEO添加JSON-LD结构化数据 */}
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": entry.data.title,
+  "description": entry.data.blurb,
+  "image": new URL(entry.data.image || '/images/common/main.jpg', Astro.site).href,  
+  "author": {
+    "@type": "Person",
+    "name": "Fan YiXiong" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blog name",
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/favicon.ico', Astro.site).href 
+    }
+  },
+  "datePublished": entry.data.published_at.toISOString()
+})} />
