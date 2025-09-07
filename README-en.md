@@ -169,11 +169,11 @@ English article content here...
 #### Interactive Components sample
 You can directly use React/Preact components in MDX articles:
 
-[Calculates Earth Pressure on Jacking Pipe with Web preview and Docx export](src\content\blog\pipe-pressure-en.mdx)
+[Calculates Earth Pressure on Jacking Pipe with Web preview and Docx export](blob/main/src/content/blog/pipe-pressure-en.mdx)
 
-[AI Chat](src\content\blog\ai-chat-en.mdx)
+[AI Chat](blob/main/src/content/blog/ai-chat-en.mdx)
 
-[KaTeX Renderer & convert](src\content\blog\mathml-en.mdx)
+[KaTeX Renderer & convert](blob/main/src/content/blog/mathml-en.mdx)
 
 
 ### Deployment
@@ -184,6 +184,8 @@ This project supports multiple deployment methods.
 
 This is the deployment method currently adopted by the project. Set up directly on the Cloudflare Pages platform without using CI/CD configuration files.
 
+Deploy sample：[https://blog-fyx.pages.dev](https://blog-fyx.pages.dev)
+
 1. **Connect GitHub Repository**: In the Cloudflare Pages dashboard, select "Connect to Git", then authorize and select this project's GitHub repository.
 2. **Configure Build Settings**:
    * **Framework Preset**: Select `Astro`. Cloudflare will automatically fill in most build settings.
@@ -193,6 +195,8 @@ This is the deployment method currently adopted by the project. Set up directly 
 #### 2. Deploy via Deno Deploy Platform
 
 You can also deploy directly through the Deno Deploy platform without configuring GitHub Actions.
+
+Deploy sample：[https://blog-fyx.deno.dev](https://blog-fyx.deno.dev)
 
 1. **Connect GitHub Repository**: In the [Deno Deploy](https://deno.com/deploy) dashboard, create a new project and connect to this GitHub repository.
 2. **Configure Project Settings**:

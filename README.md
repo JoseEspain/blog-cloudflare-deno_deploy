@@ -81,7 +81,7 @@
 
 3. **配置环境变量**
    
-   - 在项目根目录创建一个 `.env` 文件。
+   - 在项目根目录创建一个 `.env` 文件，必须的，否则会运行出错。
    
    - 复制以下内容并填入您的 API 密钥、端点和模型名称。
      
@@ -117,7 +117,7 @@
 
 这是目前项目实际采用的部署方式。直接在 Cloudflare Pages 平台设置，无需使用 CI/CD 配置文件。
 
-部署案例：[https://blog-fyx.pages.dev]([https://blog-fyx.pages.dev](https://blog-fyx.pages.dev))
+部署案例：[https://blog-fyx.pages.dev](https://blog-fyx.pages.dev)
 
 1. **连接 GitHub 仓库**: 在 Cloudflare Pages 仪表板中，选择"连接到 Git"，然后授权并选择此项目的 GitHub 仓库。
 2. **配置构建设置**:
@@ -129,7 +129,7 @@
 
 您也可以直接通过 Deno Deploy 平台进行部署，无需配置 GitHub Actions。
 
-部署案例：[[https://blog-fyx.deno.dev](https://blog-fyx.deno.dev)
+部署案例：[https://blog-fyx.deno.dev](https://blog-fyx.deno.dev)
 
 1. **连接 GitHub 仓库**: 在 [Deno Deploy](https://deno.com/deploy) 仪表板中，创建新项目并连接到此 GitHub 仓库。
 2. **配置项目设置**:
@@ -207,11 +207,11 @@ English article content here...
 
 在 MDX 文章中可以直接使用 React/Preact 组件：
 
-[顶管管顶竖向土压力计算器](src\content\blog\pipe-pressure.mdx)
+[顶管管顶竖向土压力计算器](blob/main/src/content/blog/pipe-pressure.mdx)
 
-[AI 聊天](src\content\blog\ai-chat.mdx)
+[AI 聊天](blob/main/src/content/blog/ai-chat.mdx)
 
-[KaTeX 渲染及转换工具](src\content\blog\mathml.mdx)
+[KaTeX 渲染及转换工具](blob/main/src/content/blog/mathml.mdx)
 
 ### 📜 主要 NPM 脚本
 
