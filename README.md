@@ -111,35 +111,42 @@
 
 ### 部署
 
-本项目支持多种部署方式。
+本项目支持两种部署方式。
 
-#### 1. 通过 Cloudflare Pages 仪表板部署 (推荐)
+#### 1. 通过 Cloudflare Pages 仪表板部署
 
 这是目前项目实际采用的部署方式。直接在 Cloudflare Pages 平台设置，无需使用 CI/CD 配置文件。
-
-部署案例：[https://blog-fyx.pages.dev](https://blog-fyx.pages.dev)
 
 1. **连接 GitHub 仓库**: 在 Cloudflare Pages 仪表板中，选择"连接到 Git"，然后授权并选择此项目的 GitHub 仓库。
 2. **配置构建设置**:
    * **框架预设**: 选择 `Astro`。Cloudflare 会自动填充大部分构建设置。
-   * **环境变量**: 这是最关键的一步。在 `设置 > 环境变量` 中，添加生产环境变量，特别是 AI 模型相关的变量 (例如 `API_KEY`, `API_BASE_URL`, `MODEL_NAME` 等)。
-3. **保存并部署**: Cloudflare 会自动拉取代码、构建并完成部署。后续推送到 `main` 分支的提交将自动触发新的部署。
+   * **构建命令**:`npm run build`
+   * **构建输出**:`dist`
+   * **根目录**留空
+3. **配置环境变量**: 在项目设置中添加必要的环境变量，注意采用纯文本变量
+   * `API_KEY`: 您的 API 密钥。
+   * `API_BASE_URL`: API 端点基础 URL。
+   * `AI_MODEL_NAME`: 要使用的 AI 模型名称。
+   * `ADAPTER_TYPE`: `cloudflare`
+4. **保存并部署**: Cloudflare 会自动拉取代码、构建并完成部署。后续推送到 `main` 分支的提交将自动触发新的部署。
 
 #### 2. 通过 Deno Deploy 平台部署
 
 您也可以直接通过 Deno Deploy 平台进行部署，无需配置 GitHub Actions。
 
-部署案例：[https://blog-fyx.deno.dev](https://blog-fyx.deno.dev)
-
-1. **连接 GitHub 仓库**: 在 [Deno Deploy](https://deno.com/deploy) 仪表板中，创建新项目并连接到此 GitHub 仓库。
+1. **连接 GitHub 仓库**: 在 [Deno Deploy](https://dash.deno.com) 仪表板中，创建新项目并连接到此 GitHub 仓库。
 2. **配置项目设置**:
-   * **入口文件**: 选择 `api/deno.ts`
-   * **生产分支**: 选择 `main`
+   * 预设框架选择: `Astro`
+   * **Install Step**: 填写 `npm install`
+   * **Build Step**: 填写 `npm run build`
+   * **Root directory**: 填写 `dist`
+   * **Entrypoint**: 选择 `api/deno.ts`
+   * **Production Branch**: 选择 `main` 
 3. **配置环境变量**: 在项目设置中添加必要的环境变量：
    * `API_KEY`: 您的 API 密钥。
    * `API_BASE_URL`: API 端点基础 URL。
    * `AI_MODEL_NAME`: 要使用的 AI 模型名称。
-4. **部署**: Deno Deploy 会自动构建并部署项目。后续推送到 `main` 分支的提交将自动触发新的部署。
+4. **部署**: 点击 `Deploy Project`，Deno Deploy 会自动构建并部署项目。后续推送到 `main` 分支的提交将自动触发新的部署。
 
 ### 🌐 国际化支持
 
@@ -200,7 +207,7 @@ English article content here...
 #### 文章类型
 
 - **普通文章** (`layoutMode: 'document'`): 标准博客文章布局
-- **应用页面** (`layoutMode: 'app'`): 全屏应用布局，适用于计算器、聊天等工具
+- **应用页面** (`layoutMode: 'app'`): 全屏应用布局，适用于AI聊天
 - **首页布局** (`layoutMode: 'homepage'`): 特殊首页布局
 
 #### 交互式组件示例

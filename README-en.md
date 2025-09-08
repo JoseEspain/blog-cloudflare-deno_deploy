@@ -109,6 +109,45 @@ This project adopts a modern architecture of "**frontend static generation + bac
    
    Open your browser and visit the Astro address to start development and debugging.
 
+### Deployment
+
+This project supports two deployment methods.
+
+#### 1. Deploying via Cloudflare Pages Dashboard
+
+This is the current and recommended deployment method. You can set up the project directly on the Cloudflare Pages platform without needing a CI/CD configuration file.
+
+1. Connect to your Git repository: In your Cloudflare Pages dashboard, select "Connect to Git," then authorize and choose this project's GitHub repository.
+2. Configure build settings:
+   * **Framework preset**: Select `Astro`. Cloudflare will automatically pre-populate most of the build settings.
+   * **Build command**: `npm run build`
+   * **Build output directory**: `dist`
+   * **Root directory**: Leave this field empty.
+3. Configure environment variables: In your project settings, add the necessary environment variables as plain text.
+   * **API_KEY**: Your API key.
+   * **API_BASE_URL**: The base URL for your API endpoint.
+   * **AI_MODEL_NAME**: The name of the AI model to use.
+   * **ADAPTER_TYPE**: cloudflare
+4. **Save and Deploy**: Cloudflare will automatically pull code, build, and complete deployment. Subsequent commits pushed to the `main` branch will automatically trigger new deployments.
+
+#### 2. Deploy via Deno Deploy Platform
+
+You can also deploy directly through the Deno Deploy platform without configuring GitHub Actions.
+
+1. **Connect GitHub Repository**: In the [Deno Deploy](https://deno.com/deploy) dashboard, create a new project and connect to this GitHub repository.
+2. **Configure Project Settings**:
+   * **Framework preset**: Select `Astro`
+   * **Install Step**: Enter `npm install`
+   * **Build Step**: Enter `npm run build`
+   * **Root directory**: Enter `dist`
+   * **Entry File**: Select `api/deno.ts`
+   * **Production Branch**: Select `main`
+3. **Configure Environment Variables**: Add necessary environment variables in project settings:
+   * `API_KEY`: Your API key.
+   * `API_BASE_URL`: API endpoint base URL.
+   * `AI_MODEL_NAME`: AI model name to use.
+4. **Deploy**: Deno Deploy will automatically build and deploy the project. Subsequent commits pushed to the `main` branch will automatically trigger new deployments.
+
 ### 🌐 Internationalization Support
 
 This project supports complete bilingual functionality in Chinese and English:
@@ -163,7 +202,7 @@ English article content here...
 
 #### Article Types
 - **Regular Articles** (`layoutMode: 'document'`): Standard blog article layout
-- **Application Pages** (`layoutMode: 'app'`): Full-screen application layout, suitable for calculators, chat, and other tools
+- **Application Pages** (`layoutMode: 'app'`): Full-screen application layout, suitable for AI-chat
 - **Homepage Layout** (`layoutMode: 'homepage'`): Special homepage layout
 
 #### Interactive Components sample
@@ -174,39 +213,6 @@ You can directly use React/Preact components in MDX articles:
 [AI Chat](src/content/blog/ai-chat-en.mdx)
 
 [KaTeX Renderer & convert](src/content/blog/mathml-en.mdx)
-
-
-### Deployment
-
-This project supports multiple deployment methods.
-
-#### 1. Deploy via Cloudflare Pages Dashboard (Recommended)
-
-This is the deployment method currently adopted by the project. Set up directly on the Cloudflare Pages platform without using CI/CD configuration files.
-
-Deploy sample：[https://blog-fyx.pages.dev](https://blog-fyx.pages.dev)
-
-1. **Connect GitHub Repository**: In the Cloudflare Pages dashboard, select "Connect to Git", then authorize and select this project's GitHub repository.
-2. **Configure Build Settings**:
-   * **Framework Preset**: Select `Astro`. Cloudflare will automatically fill in most build settings.
-   * **Environment Variables**: This is the most critical step. In `Settings > Environment Variables`, add production environment variables, especially AI model-related variables (e.g., `API_KEY`, `API_BASE_URL`, `MODEL_NAME`, etc.).
-3. **Save and Deploy**: Cloudflare will automatically pull code, build, and complete deployment. Subsequent commits pushed to the `main` branch will automatically trigger new deployments.
-
-#### 2. Deploy via Deno Deploy Platform
-
-You can also deploy directly through the Deno Deploy platform without configuring GitHub Actions.
-
-Deploy sample：[https://blog-fyx.deno.dev](https://blog-fyx.deno.dev)
-
-1. **Connect GitHub Repository**: In the [Deno Deploy](https://deno.com/deploy) dashboard, create a new project and connect to this GitHub repository.
-2. **Configure Project Settings**:
-   * **Entry File**: Select `api/deno.ts`
-   * **Production Branch**: Select `main`
-3. **Configure Environment Variables**: Add necessary environment variables in project settings:
-   * `API_KEY`: Your API key.
-   * `API_BASE_URL`: API endpoint base URL.
-   * `AI_MODEL_NAME`: AI model name to use.
-4. **Deploy**: Deno Deploy will automatically build and deploy the project. Subsequent commits pushed to the `main` branch will automatically trigger new deployments.
 
 ### 📜 Main NPM Scripts
 
